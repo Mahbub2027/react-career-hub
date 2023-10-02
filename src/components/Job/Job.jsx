@@ -1,7 +1,8 @@
 import { IoLocationOutline } from 'react-icons/io5';
 import {BiDollarCircle} from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 const Job = ({job}) => {
-    const {logo,job_title,company_name,remote_or_onsite,job_type,location,salary} = job;
+    const {id,logo,job_title,company_name,remote_or_onsite,job_type,location,salary} = job;
     return (
         <div className='border p-3'>
             <img src={logo}/>
@@ -16,7 +17,9 @@ const Job = ({job}) => {
                 <p className="flex items-center text-lg gap-1"><BiDollarCircle></BiDollarCircle>{salary}</p>
             </div>
             <div>
+                <Link to={`/job/${id}`}>
                 <button className="bg-[#7E90FE] text-white font-bold px-3 py-2 rounded">View Details</button>
+                </Link>
             </div>
 
         </div>
